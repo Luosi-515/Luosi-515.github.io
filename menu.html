@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>𝓒𝓾𝓲｜海外零食代購・團購 電子菜單</title>
+<style>
+:root{--bg:#fbf7f4;--card:#fff;--text:#4a4041;--muted:#9c8d8f;--accent:#c48a94;--btn:#e0b0b7;--line:#f2e6e4;--on:#fff;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.6}
+header{padding:26px 16px 10px;text-align:center}
+h1{margin:0;font-size:24px;color:var(--accent)}
+header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+#chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:3;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:10px 14px;max-width:720px;margin:0 auto}
+.chip{white-space:nowrap;font:inherit;cursor:pointer;background:var(--card);color:var(--text);border:1px solid var(--line);padding:6px 14px;border-radius:99px;font-weight:500}
+.chip.on{background:var(--btn);color:var(--on);border-color:transparent}
+main{max-width:720px;margin:0 auto;padding:0 14px 48px}
+section{margin-top:18px}
+h2{margin:0 0 8px;font-size:18px;color:var(--accent);padding-left:10px;border-left:4px solid var(--btn)}
+.list{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 14px}
+.item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.name{font-weight:600}
+.desc{font-size:13px;color:var(--muted)}
+.price{color:var(--accent);font-weight:700;white-space:nowrap}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
+</style>
+</head>
+<body>
+<header><h1>🍬 𝓒𝓾𝓲｜海外零食代購・團購</h1><p>精選海外零食・電子菜單</p></header>
+<nav id="chips"></nav>
+<main id="menu"></main>
+<p class="foot">價格為 NT$，實際以下單時為準</p>
+
+<!-- 菜單內容：每行一個商品，格式「分類|商品名稱|價格|簡介」 -->
+<script type="text/plain" id="data">螺螄粉|好歡紫|88|
+螺螄粉|好歡黃（增量版）|115|
+螺螄粉|好歡加辣臭|115|
+螺螄粉|好歡土豆|130|
+螺螄粉|李子柒|88|
+螺螄粉|李子柒酸辣粉|90|
+螺螄粉|李子柒霸道濃湯|115|
+螺螄粉|李子柒麻醬乾拌|115|
+螺螄粉|臭寶酸筍|90|
+螺螄粉|臭寶腐竹|90|
+螺螄粉|臭寶螺螄土豆|90|
+螺螄粉|孫姐黑（原味）|90|
+螺螄粉|孫姐紅（加辣加響鈴卷）|90|
+螺螄粉|孫姐藍（加量螺肉）|90|
+螺螄粉|螺霸王|90|
+袋裝主食|宛禾砂鍋土豆粉|100|
+袋裝主食|宛禾螺螄土豆粉|110|
+袋裝主食|滿小飽肥汁米線|110|
+袋裝主食|滿小飽酸菜米線|110|
+袋裝主食|滿小飽松茸雞湯米線|110|
+袋裝主食|滿小飽雲南米線|110|
+袋裝主食|滿小飽黑鴨拌粉|110|
+袋裝主食|滿小飽土豆|120|
+袋裝主食|村驢家 過橋米線|110|
+袋裝主食|村驢家 砂鍋土豆|110|
+袋裝主食|村驢家 黏糊麻辣燙|140|
+袋裝主食|阿寬粉耗子|85|
+袋裝主食|白家一根粉耗子|85|
+袋裝主食|田小花流汁寬粉|85|
+袋裝主食|渣渣灰南昌拌粉|70|
+袋裝主食|合味芳熱乾麵|45|
+袋裝主食|李海龍麻辣燙|120|
+袋裝主食|奉天美玲麻辣燙|120|
+袋裝主食|白象麻辣燙|120|
+袋裝主食|天水麻辣燙|100|
+袋裝主食|龍七爺山西拌麻辣燙|120|
+袋裝主食|莫小仙大拌菜|110|
+袋裝主食|絲令館酸辣粉|45|
+桶裝專區|好歡桶裝|90
